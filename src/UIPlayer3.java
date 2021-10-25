@@ -1,5 +1,4 @@
 import rjp.player.Player;
-import rjp.playerUI.UIPlayer;
 
 import java.util.*;
 
@@ -689,12 +688,13 @@ public class UIPlayer3 {
     }
 
     public static void main(String[] args) {
-        Player test = new Player();
-        UIPlayer3 testPlayer = new UIPlayer3(test);
+        Player test = new Player(args[0]);
 
-        test. addAlbum("hot", "Snakes");
+        test.addAlbum("hot", "Snakes");
         List<String[]> albums = test.myAlbumInfo();
         System.out.println(Arrays.toString(albums.get(0)));
+        UIPlayer3 testPlayer = new UIPlayer3(test);
+        testPlayer.menu();
 
 
         UIPlayer3 player = new UIPlayer3(new Player("JoJo"));
